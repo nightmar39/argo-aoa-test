@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  namespace: csdp-july
+  name: bootstrap
+  labels:
+    app: bootstrap
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    name: https://kubernetes.default.svc
+  project: default
+  source:
+    path: ./dev
+    repoURL: https://github.com/nightmar39/argo-submodule.git
+    targetRevision: main
+    automated:
+      prune: true
+      selfHeal: true
