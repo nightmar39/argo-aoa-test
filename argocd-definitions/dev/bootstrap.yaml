@@ -15,6 +15,3 @@ spec:
     path: ./dev
     repoURL: https://github.com/nightmar39/argo-submodule.git
     targetRevision: main
-    automated:
-      prune: true
-      selfHeal: true
